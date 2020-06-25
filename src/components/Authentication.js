@@ -1,31 +1,25 @@
 import React, {Component} from 'react';
-import {Form, Button, Image} from 'semantic-ui-react';
+import {Button, Image} from 'semantic-ui-react';
+import './Authentication.css'
 
 class Authentication extends Component{
   render(){
-    // var myStyle = {
-    //   fontSize: 100,
-    //   color: '#FF0000'
-    // }
     return (
-      <Form>
-        <Form.Field>
-          <div >
-            <h1>Hi Rozan</h1>
-            <Image src='https://icons.iconarchive.com/icons/visualpharm/must-have/256/User-icon.png'/>
-          </div>
-        </Form.Field>
+      <React.Fragment>
+
+        <div class='center'>
+          <h1>Hi Rozan</h1>
+        </div>
+
+        <div class='center'>
+          <Image src='https://icons.iconarchive.com/icons/visualpharm/must-have/256/User-icon.png'/>
+        </div>
         
-        <Form.Field>
-        <Button  style={{     //right side
-            fontSize: 30,
-            color: 'black'
-        }}>
-          Add New User
-        </Button> 
-        </Form.Field>
-      </Form>
-      
+        <div class='center'>
+         <Button> Add New User </Button> 
+        </div>
+        
+      </React.Fragment>
     );
   }
 }

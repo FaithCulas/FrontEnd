@@ -3,43 +3,24 @@ import Activity from './components/Activity';
 import Authentication from './components/Authentication';
 import Localization from './components/Localization';
 import './App.css';
-import {Grid, Image} from 'semantic-ui-react'
 
 class App extends Component{
   render(){
-
     return (
-      <React.Fragment>
 
-        <div style={{
-          display: 'flex',
-          justifyContent: 'Center',
-          fontSize:25
-        }}>
-          <Authentication/>
-        </div>
+      <React.Fragment >
 
-        <div style={{       //first row
+        <Authentication/>
+
+        <div class='bottom_row'
+        style={{
           display: 'flex',
-          justifyContent: 'space-between',
+          justifycontent: 'space-between',
           flex:'row'
         }}>
-          <div style={{     //left sife
-            display: 'flex',
-            fontSize: 25,
-            marginLeft: 100
-          }}>
-            <Activity/>
-          </div>
-          <div style={{     //right side
-            display: 'flex',
-            fontSize: 25,
-            marginRight: 150
-          }}>
-            <Localization/>
-          </div>
+          <Activity/>
+          <Localization/>
         </div>
-
         
      </React.Fragment>
         
