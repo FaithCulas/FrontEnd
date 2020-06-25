@@ -1,0 +1,3 @@
+To install bootstrap for front end use followinf commands 
+    npm install react-bootstrap bootstrap
+You need in to install a chrome extention if you get CORS error. (Allow cors)
