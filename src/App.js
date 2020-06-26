@@ -6,37 +6,6 @@ import ActivityRecognition from "./components/activity";
 import Authenticate from "./components/auth";
 import Localization from "./components/localization";
 
-<<<<<<< HEAD
-class App extends Component{
-  render(){
-    return (
-
-      <React.Fragment >
-
-        <Authentication/>
-
-        <div class='bottom_row'
-        style={{
-          display: 'flex',
-          justifycontent: 'space-between',
-          flex:'row'
-        }}>
-          <Activity/>
-          <Localization/>
-        </div>
-        
-     </React.Fragment>
-        
-
-      // <div className="App" >
-      //    <Activity/>
-      //    <Authentication/>
-      //    <Localization/>
-      // </div>
-    );
-    
-  }
-=======
 function App() {
   const butstyle = {
     marginTop: "5vh",
@@ -71,7 +40,7 @@ function App() {
       </div>
     </main>
   );
->>>>>>> daham
+    
 }
 
 export default App;
