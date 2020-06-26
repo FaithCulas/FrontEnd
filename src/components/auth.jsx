@@ -9,10 +9,10 @@ class Autheticate extends Component {
   }
 
   async componentDidMount() {
-    const url = "http://127.0.0.1:5000/";
+    const url = "http://127.0.0.1:5000/users";
     const response = await fetch(url);
     const data = await response.json();
-    this.setState({ items: data[0] });
+    this.setState({ items: data[0]});
   }
   render() {
     const { isLoaded, items } = this.state;
