@@ -2,7 +2,6 @@ import React, {Component} from 'react';
 import {Form, Image} from 'semantic-ui-react';
 import './Activity.css'
 
-
 class Activity extends Component{
   render(){
     return (
