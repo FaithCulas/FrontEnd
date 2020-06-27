@@ -9,7 +9,7 @@ class Autheticate extends Component {
   }
 
   async componentDidMount() {
-    const url = "http://127.0.0.1:5000/users";
+    const url = "http://127.0.0.1:5000/get";
     const response = await fetch(url);
     const data = await response.json();
     this.setState({ items: data[0]});
@@ -32,7 +32,7 @@ class Autheticate extends Component {
     return (
       <div style={authStye}>
         <h1> User: </h1>
-        <h2>{items["user"]} </h2>
+        <h2>{items} </h2>
       </div>
     );
   }
