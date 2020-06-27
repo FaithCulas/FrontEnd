@@ -1,31 +1,49 @@
-import React from "react";
-import "./App.css";
-import MovieList from "./components/component";
-import NavBar from "./components/navbar";
-import ActivityRecognition from "./components/activity";
-import Authenticate from "./components/auth";
-import Localization from "./components/localization";
+import React, {Component,useEffect,useState} from 'react';
+import Activity from './components/Activity';
+import Authentication from './components/Authentication';
+import Localization from './components/Localization';
+import './App.css';
+import NavBar from './components/NavBar';
 
-function App() {
-  const butstyle = {
-    marginTop: "5vh",
-    width: "40vh",
-    heigh: 100,
-    alighnContent: "center",
-  };
-  return (
-    <main>
+function App(){
+    const butstyle = {
+      marginTop: "5vh",
+      width: "40vh",
+      heigh: 100,
+      alighnContent: "center",}
+
+      const [activity,setActivity]=useState();
+      const [user,setUser]=useState();
+      const [location,setLocation]=useState();
+      
+
+      useEffect(()=>{
+        fetch('/get').then(res=>res.json().then(data=>{
+          console.log(data)
+          setActivity(data.activity);
+          setUser(data.user);
+          setLocation(data.location);
+        }))
+      },[])
+
+      
+
+    return (
+      <main>
       <div>
         <NavBar />
       </div>
       <div className="container-fluid ">
         <div className="row">
           <div className="col" style={{ justifyContent: "center" }}>
-            <ActivityRecognition />
+            <Activity />
+            {activity}
           </div>
           <div className="col">
-            <Authenticate />
+            <Authentication />
+            {user}
             <Localization />
+            {location}
             <div>
               <button
                 type="button"
@@ -39,8 +57,10 @@ function App() {
         </div>
       </div>
     </main>
-  );
-    
-}
+      
+    );
+  }
+ 
+
 
 export default App;
