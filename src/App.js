@@ -5,7 +5,10 @@ import Localization from './components/Localization';
 import './App.css';
 import NavBar from './components/NavBar';
 
-function App(){
+
+
+function App() {
+  
     const butstyle = {
       marginTop: "5vh",
       width: "40vh",
@@ -25,9 +28,9 @@ function App(){
           setLocation(data.location);
         }))
       },[])
+   
 
-      
-
+        
     return (
       <main>
       <div>
@@ -49,6 +52,19 @@ function App(){
                 type="button"
                 className="btn btn-primary"
                 style={butstyle}
+                onClick={async () => {
+                  const movie = { activity, user, location };      //adding new movie value
+                  const response = await fetch("/get")
+                  .then(function(response) {
+                     console.log("It worked, response is: ", response)
+                     movie.push({
+                         pathname: '/get'
+                     }); 
+                  }).catch(function() {
+                     console.log("error");
+                  });
+                  }
+                }
               >
                 Add User
               </button>
