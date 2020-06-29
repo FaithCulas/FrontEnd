@@ -43,8 +43,7 @@ function App() {
             {activity}
           </div>
           <div className="col">
-            <Authentication />
-            {user}
+            <Authentication user={user}/>
             <Localization />
             {location}
             <div>
@@ -52,19 +51,7 @@ function App() {
                 type="button"
                 className="btn btn-primary"
                 style={butstyle}
-                onClick={async () => {
-                  const movie = { activity, user, location };      //adding new movie value
-                  const response = await fetch("/get")
-                  .then(function(response) {
-                     console.log("It worked, response is: ", response)
-                     movie.push({
-                         pathname: '/get'
-                     }); 
-                  }).catch(function() {
-                     console.log("error");
-                  });
-                  }
-                }
+                onClick={()=>{ alert('Done'); }}
               >
                 Add User
               </button>
