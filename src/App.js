@@ -6,6 +6,7 @@ import Authenticate from "./components/auth";
 import Localization from "./components/localization";
 import SideBar from "./components/sidebar";
 
+<<<<<<< HEAD
 function App() {
   const butstyle = {
     //--------------------------------------- //
@@ -16,12 +17,24 @@ function App() {
   };
   const [toggleVal, setToggle] = useState(0);
   const [state, setState] = useState({ data: [] });
+=======
+
+
+function App() {
+  
+    const butstyle = {
+      marginTop: "5vh",
+      width: "40vh",
+      heigh: 100,
+      alighnContent: "center",}
+>>>>>>> Rozan
 
   //--------------------------Fethching data from API-----------------//
   useEffect(() => {
     fetchData();
   }, [state]);
 
+<<<<<<< HEAD
   const fetchData = async () => {
     try {
       const response = await fetch("http://127.0.0.1:5000/get");
@@ -74,6 +87,43 @@ function App() {
                   {toggleVal ? "Done" : "Add User"}
                 </button>
               </div>
+=======
+      useEffect(()=>{
+        fetch('/get').then(res=>res.json().then(data=>{
+          console.log(data)
+          setActivity(data.activity);
+          setUser(data.user);
+          setLocation(data.location);
+        }))
+      },[])
+   
+
+        
+    return (
+      <main>
+      <div>
+        <NavBar />
+      </div>
+      <div className="container-fluid ">
+        <div className="row">
+          <div className="col" style={{ justifyContent: "center" }}>
+            <Activity />
+            {activity}
+          </div>
+          <div className="col">
+            <Authentication user={user}/>
+            <Localization />
+            {location}
+            <div>
+              <button
+                type="button"
+                className="btn btn-primary"
+                style={butstyle}
+                onClick={()=>{ alert('Done'); }}
+              >
+                Add User
+              </button>
+>>>>>>> Rozan
             </div>
           </div>
         </div>

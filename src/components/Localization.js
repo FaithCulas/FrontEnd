@@ -1,4 +1,9 @@
+<<<<<<< HEAD
 import React, { Component } from "react";
+=======
+ 
+import React, {Component} from 'react';
+>>>>>>> Rozan
 
 class Localization extends Component {
   render() {
