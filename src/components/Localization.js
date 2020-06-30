@@ -1,16 +1,13 @@
-import React, {Component} from 'react';
+import React, { Component } from "react";
 
-
-class Localization extends Component{
-  render(){
+class Localization extends Component {
+  render() {
     return (
-      <div >
+      <div>
         <h1>User Localization</h1>
       </div>
     );
   }
 }
- 
-
 
 export default Localization;

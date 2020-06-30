@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import styles from './Activity.css'
+
 
 class Activity extends Component{
   render(){
